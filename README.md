@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'litmus-instant'
+gem "litmus-instant"
 ```
 
 And then execute:
