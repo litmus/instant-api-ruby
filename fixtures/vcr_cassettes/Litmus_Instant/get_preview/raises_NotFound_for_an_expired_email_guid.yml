@@ -1628,4 +1628,41 @@ http_interactions:
         }
     http_version: 
   recorded_at: Tue, 06 Oct 2015 14:06:29 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/e87c1ce1-fc66-4f7e-9eb5-00bffdd04a0f/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 17:16:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 17:16:12 GMT
 recorded_with: VCR 2.9.3

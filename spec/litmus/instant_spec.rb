@@ -1,5 +1,4 @@
 require "spec_helper"
-require "securerandom"
 require "uri"
 require "cgi"
 require "rack/utils"
@@ -91,8 +90,7 @@ describe Litmus::Instant do
       )["email_guid"]
     end
   end
-  # random is equivalent to expired, everything unknown is treated the same
-  let(:expired_email_guid) { SecureRandom.uuid }
+  let(:expired_email_guid) { "e87c1ce1-fc66-4f7e-9eb5-00bffdd04a0f" }
 
   describe ".clients" do
     it "returns an array of client names" do
