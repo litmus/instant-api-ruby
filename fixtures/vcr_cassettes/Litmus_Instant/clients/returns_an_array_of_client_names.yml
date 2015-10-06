@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/clients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 10:40:04 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '677'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        [
+          "ANDROID4",
+          "ANDROIDGMAILAPP",
+          "AOLONLINE",
+          "APPMAIL7",
+          "APPMAIL8",
+          "CHROMEAOLONLINE",
+          "CHROMEGMAILNEW",
+          "CHROMEGOOGLEAPPS",
+          "CHROMEOFFICE365",
+          "CHROMEOUTLOOKCOM",
+          "CHROMEYAHOO",
+          "COLORBLIND",
+          "FFAOLONLINE",
+          "FFGMAILNEW",
+          "FFGOOGLEAPPS",
+          "FFOFFICE365",
+          "FFOUTLOOKCOM",
+          "FFYAHOO",
+          "GMAILNEW",
+          "GOOGLEAPPS",
+          "IPAD",
+          "IPADMINI",
+          "IPHONE5S",
+          "IPHONE5SIOS8",
+          "IPHONE6",
+          "IPHONE6PLUS",
+          "NOTES7",
+          "NOTES8",
+          "NOTES85",
+          "NOTES9",
+          "OFFICE365",
+          "OL2000",
+          "OL2002",
+          "OL2003",
+          "OL2007",
+          "OL2010",
+          "OL2011",
+          "OL2013",
+          "OL2013DPI120",
+          "OL2015",
+          "OUTLOOKCOM",
+          "PLAINTEXT",
+          "THUNDERBIRDLATEST",
+          "YAHOO"
+        ]
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 10:40:38 GMT
+recorded_with: VCR 2.9.3

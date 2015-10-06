@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 10:40:37 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "6c8862e2-b10d-4753-85d8-340c91c0b071"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 10:40:41 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/6c8862e2-b10d-4753-85d8-340c91c0b071/previews/PLAINTEXT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 10:40:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '421'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "full_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed.png",
+          "thumb_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed-thumb.png",
+          "thumb450_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed-thumb450.png"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 10:40:43 GMT
+recorded_with: VCR 2.9.3
