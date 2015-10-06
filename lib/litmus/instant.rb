@@ -27,11 +27,12 @@ module Litmus
       end
     end
 
-    class BaseError < StandardError; end
-    class RequestError < BaseError; end
-    class AuthenticationError < BaseError; end
-    class ServerError < BaseError; end
-    class NotFound < BaseError; end
+    class ApiError < StandardError; end
+    class RequestError < ApiError; end
+    class AuthenticationError < ApiError; end
+    class ServiceError < ApiError; end
+    class TimeoutError < ApiError; end
+    class NotFound < ApiError; end
 
     def self.api_key(key=nil)
       if key
@@ -91,6 +92,11 @@ module Litmus
         raise AuthenticationError.new(message) if response.code == 401
         raise RequestError.new(message) if response.code == 400
         raise NotFound.new(message) if response.code == 404
+        raise TimeoutError.new(message) if response.code == 504
+        raise ServiceError.new(message) if response.code == 500
+
+        # For all other errors
+        raise ApiError.new(message)
       end
 
       response
