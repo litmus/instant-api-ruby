@@ -1,5 +1,7 @@
 require "litmus/instant/version"
+require "litmus/core_ext/hash/deep_symbolize_keys"
 require "httparty"
+require "litmus/httparty/patch_parser_to_symbolize"
 require "uri"
 require "cgi"
 
