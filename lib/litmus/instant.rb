@@ -48,6 +48,10 @@ module Litmus
       get "/clients"
     end
 
+    def self.client_configurations
+      get "/clients/configurations"
+    end
+
     def self.get_preview(email_guid, client)
       get "/emails/#{email_guid}/previews/#{client}"
     end

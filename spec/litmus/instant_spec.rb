@@ -77,6 +77,18 @@ describe Litmus::Instant do
     end
   end
 
+  describe ".client_configurations" do
+    it "returns a Hash of clients and their available options" do
+      response = Litmus::Instant.client_configurations
+      expect(response).to be_a Hash
+      expect(response).to have_key "OL2010"
+      sample_config = response["OL2010"]
+      expect(sample_config).to be_a Hash
+      expect(sample_config).to have_key "orientation_options"
+      expect(sample_config).to have_key "images_options"
+    end
+  end
+
   describe ".get_preview" do
     it "raises RequestError for an invalid email_guid" do
       expect {

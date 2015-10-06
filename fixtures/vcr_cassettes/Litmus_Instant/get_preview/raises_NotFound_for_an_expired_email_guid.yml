@@ -185,4 +185,189 @@ http_interactions:
         }
     http_version: 
   recorded_at: Tue, 06 Oct 2015 11:01:37 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/72cc3f98-84fd-46d8-bc57-e00428a59ac1/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:04:55 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:04:59 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/4a4501ed-7f6d-4858-839c-e12549838376/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:29:49 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:30:22 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/16d3e4af-2a8b-4799-a086-50a4cc644391/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:30:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:30:34 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/f1b24533-5c3b-4fcf-8aad-f88ea3481b8f/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:33:36 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:33:39 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/63a82fbb-b6a8-462a-841b-956f2b6d33ad/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:34:13 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:34:16 GMT
 recorded_with: VCR 2.9.3

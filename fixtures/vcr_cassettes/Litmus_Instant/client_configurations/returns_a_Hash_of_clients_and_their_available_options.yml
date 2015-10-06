@@ -1,0 +1,419 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/clients/configurations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:30:30 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '5766'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "OL2000": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "OL2002": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "OL2003": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2007": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2010": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2013": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEYAHOO": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFYAHOO": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "YAHOO": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "GMAILNEW": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFGMAILNEW": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEGMAILNEW": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2015": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "APPMAIL7": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "APPMAIL8": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2011": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "OUTLOOKCOM": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFOUTLOOKCOM": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEOUTLOOKCOM": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "IPAD": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "IPADMINI": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "IPHONE5S": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "IPHONE5SIOS8": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "IPHONE6": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "IPHONE6PLUS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "THUNDERBIRDLATEST": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "PLAINTEXT": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "AOLONLINE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFAOLONLINE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEAOLONLINE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "GOOGLEAPPS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFGOOGLEAPPS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEGOOGLEAPPS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "COLORBLIND": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "NOTES7": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "NOTES8": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "NOTES85": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "NOTES9": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "OFFICE365": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "FFOFFICE365": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "CHROMEOFFICE365": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ]
+          },
+          "OL2013DPI120": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "ANDROIDGMAILAPP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          },
+          "ANDROID4": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ]
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:30:33 GMT
+recorded_with: VCR 2.9.3
