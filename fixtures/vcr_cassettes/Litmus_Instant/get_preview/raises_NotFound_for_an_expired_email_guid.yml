@@ -370,4 +370,1262 @@ http_interactions:
         }
     http_version: 
   recorded_at: Tue, 06 Oct 2015 11:34:16 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/7d8c3efb-b8ef-44f2-9622-0307b7e4a9b2/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:48:53 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:49:27 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/78366559-7ba9-479f-b381-ef9bf60efe56/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:49:10 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:49:44 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/2ce66aad-7432-4e02-9162-1a56462e8b4b/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:03:24 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:03:58 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/91636e10-adf8-4e24-8e16-f433cdb7fc0b/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:08:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:08:57 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/527a563b-d87e-450e-8924-eb3a2f83d955/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:26:30 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:27:04 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/e1307a71-7137-45b4-9905-603db1045bc5/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:27:46 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:27:50 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/c11e482e-4318-4f0a-90e3-8451ce553359/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:27:36 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:28:10 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/1a1fb080-6d12-4031-9673-257d07f93a01/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:27:52 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:28:26 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/b6c88576-0c7c-4640-b24c-e47030aaab6d/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:28:27 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:28:31 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/c6d9f650-57ba-4023-b875-3bd9eaed041f/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:28:45 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:29:19 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/8e1b5383-7369-46ca-a6c2-0172b6890b96/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:30:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:31:32 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/473686f6-ef62-44fa-8c84-8cdbc713f6d6/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:35:21 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:35:25 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/3f7a2349-ae8b-4bf0-88ca-bdd8ee3f2f91/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:38:25 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:38:29 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/b0bc2348-22ec-48a2-b2cd-c71d8deb1d93/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:41:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:41:37 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/9c9d19d4-9f40-4cfa-bfc5-bc541b386fa5/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:45:14 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:45:48 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/a23f6853-c3ea-4b4f-bd38-19ec663c47e5/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:58:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:58:51 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/b49c17ca-01a8-483d-b804-94498a234e6a/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 12:59:07 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 12:59:11 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/aed02807-a99e-4c42-969a-3238f2954955/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:00:50 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:01:24 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/c47cf66c-c8f3-4799-b1c7-6fc7047afa5b/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:02:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:02:21 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/91e554f6-e615-4b25-810c-f08e03bffb27/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:02:37 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:02:41 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/c858bfca-6827-454c-824b-31b37ec8a5ce/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:11:10 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:11:45 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/6fbccf47-58be-4e3f-aa74-8291796fc8bf/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:12:01 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:12:05 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/f1b27cca-3533-4992-9f86-9fd06b8bba5c/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:12:00 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:12:34 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/4b00a285-ff90-42e6-9a04-3d0cfcc980d2/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:12:56 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:13:00 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/ed69ec5e-4397-40df-a76f-8c2f23898960/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:12:44 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:13:18 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/f3f34720-df46-48c7-a12c-f46eae2a6e84/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:20:46 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:21:20 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/44ac1ac3-a90a-41dc-aa7d-00cdf7dd5bc0/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:51:03 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:51:37 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/59bc29b2-adbb-4962-8ac5-0d38d38179a9/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:52:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:53:05 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/127036d7-0c74-4bfa-9ae1-f3f2e252739c/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:53:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:53:42 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/cba60006-1b40-4d3e-9fe0-19028c505c5b/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:54:20 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:54:24 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/7fe8daa0-72e7-44fc-9c3b-27a427f6c8fd/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 13:54:40 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 13:54:44 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/3f09fb4f-abf5-421d-afda-9f1384cc9c4c/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 14:03:50 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 14:04:24 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/33fe55a3-d9e6-4f62-bd7c-75284b366358/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 14:03:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 14:04:32 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/7ef9ade3-f5bb-4f7b-9bac-a9ec063db83d/previews/OL2010
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 14:06:25 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      X-Cascade:
+      - pass
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 404,
+          "title": "Not found"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 14:06:29 GMT
 recorded_with: VCR 2.9.3

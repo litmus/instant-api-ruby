@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen!","end_user_id":"bob"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:48:52 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '82'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "991a525b-db78-44f1-947e-4813a0041e39",
+          "end_user_id": "bob"
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:49:25 GMT
+recorded_with: VCR 2.9.3

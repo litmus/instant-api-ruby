@@ -1,5 +1,7 @@
 require "litmus/instant/version"
 require "httparty"
+require "uri"
+require "cgi"
 
 module Litmus
   module Instant
@@ -60,8 +62,19 @@ module Litmus
       post "/emails/#{email_guid}/previews/prefetch", body: { configurations: configurations }.to_json
     end
 
-    def self.preview_image_url(email_guid, client, capture_size = "full")
-      "#{sharded_base_uri(client)}/emails/#{email_guid}/previews/#{client}/#{capture_size}"
+    # We'd use Ruby 2.x keyword args here, but it's more useful to preserve
+    # compatibility for anyone stuck with ruby < 2.x
+    def self.preview_image_url(email_guid, client, capture_size = "full", options = {})
+      if options.keys.length > 0
+        if options[:fallback_url]
+          options[:fallback_url] = CGI.escape(options[:fallback_url])
+        end
+        puts options.inspect
+        query = URI.encode_www_form(options)
+        "#{sharded_base_uri(client)}/emails/#{email_guid}/previews/#{client}/#{capture_size}?#{query}"
+      else
+        "#{sharded_base_uri(client)}/emails/#{email_guid}/previews/#{client}/#{capture_size}"
+      end
     end
 
     private

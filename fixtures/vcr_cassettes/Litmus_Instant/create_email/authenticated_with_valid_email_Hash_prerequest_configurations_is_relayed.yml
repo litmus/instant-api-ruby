@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen!","configurations":[{"client":"OL2010"},{"client":"OL2013","images":"blocked"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 06 Oct 2015 11:49:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '280'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "991a525b-db78-44f1-947e-4813a0041e39",
+          "configurations": [
+            {
+              "orientation": "vertical",
+              "images": "allowed",
+              "client": "OL2010"
+            },
+            {
+              "orientation": "vertical",
+              "images": "blocked",
+              "client": "OL2013"
+            }
+          ]
+        }
+    http_version: 
+  recorded_at: Tue, 06 Oct 2015 11:49:26 GMT
+recorded_with: VCR 2.9.3

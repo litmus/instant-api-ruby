@@ -1,5 +1,8 @@
 require "spec_helper"
 require "securerandom"
+require "uri"
+require "cgi"
+require "rack/utils"
 
 describe Litmus::Instant do
   it "has a version number" do
@@ -41,11 +44,33 @@ describe Litmus::Instant do
         end
 
         describe "optional end_user_id" do
-          pending
+          it "is relayed" do
+            response = Litmus::Instant.create_email(
+              valid_email.merge(
+                end_user_id: "bob"
+              )
+            )
+            expect(response).to have_key "end_user_id"
+            expect(response["end_user_id"]).to eq "bob"
+          end
         end
 
         describe "prerequest configurations" do
-          pending
+          it "is relayed" do
+            response = Litmus::Instant.create_email(
+              valid_email.merge(
+                configurations: [
+                  { client: "OL2010" },
+                  { client: "OL2013", images: "blocked" }
+                ]
+              )
+            )
+            expect(response).to have_key "configurations"
+            expect(response["configurations"]).to be_an Array
+            expect(response["configurations"]).to include(
+              { "client" => "OL2010", "images" => "allowed", "orientation" => "vertical" }
+            )
+          end
         end
       end
 
@@ -165,15 +190,27 @@ describe Litmus::Instant do
 
     describe "with optional configuration" do
       it "adds the appropriate query parameters" do
-        pending
-        fail
+        result = Litmus::Instant::preview_image_url(
+          "FAKE-EMAIL-GUID",
+          "FAKE-CLIENT",
+          "full",
+          orientation: "vertical",
+          images: "blocked"
+        )
+        query_hash = Rack::Utils.parse_nested_query(URI(result).query)
+        expect(query_hash["orientation"]).to eq "vertical"
+        expect(query_hash["images"]).to eq "blocked"
       end
-    end
 
-    describe "with fallback_url" do
-      it "includes the URL encoded fallback url" do
-        pending
-        fail
+      it "URL encodes the fallback url" do
+        result = Litmus::Instant::preview_image_url(
+          "FAKE-EMAIL-GUID",
+          "FAKE-CLIENT",
+          "full",
+          fallback_url: "http://placehold.it/100x100.png"
+        )
+        query_hash = Rack::Utils.parse_nested_query(URI(result).query)
+        expect(query_hash["fallback_url"]).to eq "http%3A%2F%2Fplacehold.it%2F100x100.png"
       end
     end
   end
