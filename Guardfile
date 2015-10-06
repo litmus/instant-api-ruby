@@ -2,7 +2,7 @@
 # directories %w(app lib config test spec features) \
 #  .select{|d| Dir.exists?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
-guard :rspec, cmd: "bundle exec rspec" do
+guard :rspec, cmd: "source .env && bundle exec rspec" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

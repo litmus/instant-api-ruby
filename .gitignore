@@ -30,3 +30,4 @@ build/
 /Gemfile.lock
 .ruby-version
 .ruby-gemset
+.env
