@@ -1,7 +1,6 @@
 require "litmus/instant/version"
-require "litmus/core_ext/hash/deep_symbolize_keys"
 require "httparty"
-require "litmus/httparty/patch_parser_to_symbolize"
+require "litmus/instant/response"
 require "uri"
 require "cgi"
 
@@ -23,8 +22,11 @@ module Litmus
         alias_method :"#{method}_without_raise", method
 
         define_method method do |*args|
-          response = send(:"#{method}_without_raise", *args)
-          raise_on_failure(response)
+          httparty_response = send(:"#{method}_without_raise", *args)
+          raise_on_failure(httparty_response)
+          # wrap our returned response in our own class that gives us symbolized
+          # keys
+          Litmus::Instant::Response.new(httparty_response)
         end
       end
     end
