@@ -70,7 +70,6 @@ module Litmus
         if options[:fallback_url]
           options[:fallback_url] = CGI.escape(options[:fallback_url])
         end
-        puts options.inspect
         query = URI.encode_www_form(options)
         "#{sharded_base_uri(client)}/emails/#{email_guid}/previews/#{client}/#{capture_size}?#{query}"
       else
