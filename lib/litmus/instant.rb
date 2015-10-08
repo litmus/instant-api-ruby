@@ -74,7 +74,7 @@ module Litmus
     #   An array of capture capture configuration hashes
     #   This allows pre-requesting previews that should be captured as soon as
     #   possible. This can be a useful performance optimisation.
-    #   @see .prefetch_previews for further detail on format.
+    #   See +.prefetch_previews+ for further detail on format.
     #
     # @return [Hash] the response containing the +email_guid+ and also
     #   confirmation of +end_user_id+ and +configurations+ if provided
@@ -151,7 +151,6 @@ module Litmus
     #
     # @param [String] email_guid
     # @param [String] client
-    # @param [String] capture_size
     # @param [Hash] options
     # @option options [String] :capture_size +full+ (default), +thumb+ or +thumb450+
     # @option options [String] :images +allowed+ (default) or +blocked+
