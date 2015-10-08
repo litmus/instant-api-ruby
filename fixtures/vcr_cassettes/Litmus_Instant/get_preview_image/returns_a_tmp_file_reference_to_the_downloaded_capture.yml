@@ -1,0 +1,216 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 16:13:59 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "4e61d0bf-24f4-41d1-9a42-0d9558235b2b"
+        }
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:14:03 GMT
+- request:
+    method: get
+    uri: https://plaintext.instant-api.litmus.com/v1/emails/4e61d0bf-24f4-41d1-9a42-0d9558235b2b/previews/PLAINTEXT/thumb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 16:13:54 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Location:
+      - https://PLAINTEXT.capture.litmuscdn.com/4e61d0bf-24f4-41d1-9a42-0d9558235b2b/results/plaintext-vertical-allowed-thumb.png
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:14:30 GMT
+- request:
+    method: get
+    uri: https://plaintext.capture.litmuscdn.com/4e61d0bf-24f4-41d1-9a42-0d9558235b2b/results/plaintext-vertical-allowed-thumb.png
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Thu, 08 Oct 2015 16:14:00 GMT
+      Content-Type:
+      - image/png
+      Content-Length:
+      - '2331'
+      Last-Modified:
+      - Thu, 08 Oct 2015 16:14:30 GMT
+      Connection:
+      - keep-alive
+      Etag:
+      - '"56169666-91b"'
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:14:30 GMT
+- request:
+    method: get
+    uri: https://plaintext.instant-api.litmus.com/v1/emails/4e61d0bf-24f4-41d1-9a42-0d9558235b2b/previews/PLAINTEXT/thumb?fallback=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 16:20:40 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Location:
+      - https://PLAINTEXT.capture.litmuscdn.com/4e61d0bf-24f4-41d1-9a42-0d9558235b2b/results/plaintext-vertical-allowed-thumb.png
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:21:15 GMT
+recorded_with: VCR 2.9.3

@@ -118,7 +118,7 @@ Note that the default behaviour of the the embedable URL returned from `Litmus::
 
 ### Downloading previews server-side
 
-The gem itself doesn't provide a dedicated method for downloading raw image data, only generating the URLs to download from. This was a conscious decision to leave the choice of tooling used for downloading the binary data open to the developer.
+The gem itself provides `Litmus::Instant.get_preview_image` as a simple, if naïve, method for downloading the raw image data to an object in memory. This method is fine for incidental usage, but provides no opportunity for parallelisation or streaming straight to disk.
 
 In the simplest case, downloading a single preview to a tempfile can be achieved with Ruby's [OpenURI](http://ruby-doc.org/stdlib-2.1.0/libdoc/open-uri/rdoc/OpenURI.html)
 
