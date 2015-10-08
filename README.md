@@ -1,6 +1,6 @@
 # Litmus Instant API Ruby
 
-A ruby API client library for interacting with [Litmus Instant API](https://litmus.com/partners/api/documentation/instant/01-getting-started/).
+A ruby API client library for interacting with [Litmus Instant API](https://litmus.com/partners/api/documentation/instant/01-getting-started/) - the fastest way to include email previews from real clients in your application.
 
 ## Installation
 
@@ -36,14 +36,14 @@ email_guid = Litmus::Instant.create_email(
 # => "755d1f9f-ad28-460f-8e45-632e0eceab32"
 ```
 
-Generate a preview URL for embedding client side or for downloading
+Construct a preview URL for embedding client side or for downloading
 
 ```ruby
 @preview_url = Litmus::Instant.preview_image_url(email_guid, "OL2010")
 # => "https://OL2010.instant-api.litmus.com/v1/emails/755d1f9f-ad28-460f-8e45-632e0eceab32/previews/OL2010/full"
 ```
 
-This could be used in a Rails erb template
+This could be used in a Rails erb template like so
 
 ```html
 <%= image_tag @preview_url %>
@@ -53,7 +53,7 @@ This could be used in a Rails erb template
 
 In the example above the capture wouldn't be initiated until the end user's browser made the HTTP GET request to the preview URL. This would mean waiting the full capture time (a number of seconds) before the image data began to transfer.
 
-Valuable time can be shaved here by pre-requesting required capture configurations as early as it's known they're needed. By the time the browser comes to request the preview the capture will be in progress, so transfer of the image data will begin sooner.
+Valuable time can be shaved here by pre-requesting required capture configurations as early as it's known they're needed. By the time the browser comes to request the preview the capture will be in progress or completed, so transfer of the image data will begin sooner. This also avoids browser connection limits delaying the initiation of capture for previews queued behind other requests.
 
 This pre-request can be provided during email creation
 
@@ -134,7 +134,7 @@ A common use case is downloading a batch of previews for a selection of email cl
 In this situation we recommend:
 
  - pre-requesting known clients before download
- - making parallel HTTP requests, with concurrency tuned to minimise wait time, maximise bandwidth usage, but avoid slow down from network contention.
+ - making parallel HTTP requests, with concurrency tuned to minimise wait time, maximise bandwidth usage, but minimise network contention issues.
 
 When constrained by bandwidth, simply pre-requesting and then sequentially downloading one preview after another may yield the fastest completion time. In most situations, exceeding 15 concurrent connections is unlikely to improve overall completion time.
 
@@ -163,7 +163,7 @@ hydra.run
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, with the `API_KEY`environment variable set appropriately, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, with the `API_KEY` environment variable set appropriately, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
