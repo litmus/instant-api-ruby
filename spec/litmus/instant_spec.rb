@@ -187,24 +187,19 @@ describe Litmus::Instant do
     end
 
     describe "with optional configuration" do
+      it "handles capture_size appropriately" do
+        result = Litmus::Instant::preview_image_url(
+          "FAKE-EMAIL-GUID",
+          "FAKE-CLIENT",
+          capture_size: "thumb450"
+        )
+        expect(result).to eq "https://FAKE-CLIENT.instant-api.litmus.com/v1/emails/FAKE-EMAIL-GUID/previews/FAKE-CLIENT/thumb450"
+      end
+
       it "adds the appropriate query parameters" do
         result = Litmus::Instant::preview_image_url(
           "FAKE-EMAIL-GUID",
           "FAKE-CLIENT",
-          "full",
-          orientation: "vertical",
-          images: "blocked"
-        )
-        query_hash = Rack::Utils.parse_nested_query(URI(result).query)
-        expect(query_hash["orientation"]).to eq "vertical"
-        expect(query_hash["images"]).to eq "blocked"
-      end
-
-      it "in place of capture_size param adjusts smartly" do
-        result = Litmus::Instant::preview_image_url(
-          "FAKE-EMAIL-GUID",
-          "FAKE-CLIENT",
-          # no capture_size param
           orientation: "vertical",
           images: "blocked"
         )
@@ -217,7 +212,6 @@ describe Litmus::Instant do
         result = Litmus::Instant::preview_image_url(
           "FAKE-EMAIL-GUID",
           "FAKE-CLIENT",
-          "full",
           fallback_url: "http://placehold.it/100x100.png"
         )
         query_hash = Rack::Utils.parse_nested_query(URI(result).query)

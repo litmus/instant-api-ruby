@@ -150,7 +150,7 @@ Litmus::Instant.prefetch_previews(email_guid, configurations)
 
 hydra = Typhoeus::Hydra.new(max_concurrency: 15)
 clients.each do |client|
-  preview_url = Litmus::Instant.preview_image_url(email_guid, client, "thumb")
+  preview_url = Litmus::Instant.preview_image_url(email_guid, client, capture_size: "thumb")
   request = Typhoeus::Request.new(preview_url, followlocation: true)
   request.on_complete do |response|
     File.write("/tmp/#{email_guid}-#{client}.png", response.body)

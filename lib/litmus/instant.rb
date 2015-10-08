@@ -142,8 +142,9 @@ module Litmus
     # @param [String] client
     # @param [String] capture_size
     # @param [Hash] options
-    # @option options [String] :images +allowed+ or +blocked+
-    # @option options [String] :orientation +horizontal+ or +vertical+
+    # @option options [String] :capture_size +full+ (default), +thumb+ or +thumb450+
+    # @option options [String] :images +allowed+ (default) or +blocked+
+    # @option options [String] :orientation +horizontal+ or +vertical+ (default)
     # @option options [Boolean] :fallback by default errors during capture
     #   redirect to a fallback image, setting this to +false+ will mean that
     #   GETs to the resulting URL will receive HTTP error responses instead
@@ -153,13 +154,10 @@ module Litmus
     #   accessible publicly without the need for authentication.
     #
     # @return [String] the preview URL, domain sharded by the client name
-    def self.preview_image_url(email_guid, client, capture_size = "full", options = {})
+    def self.preview_image_url(email_guid, client, options = {})
       # We'd use Ruby 2.x keyword args here, but it's more useful to preserve
       # compatibility for anyone stuck with ruby < 2.x
-      if capture_size.is_a?(Hash)
-        options = capture_size
-        capture_size = "full"
-      end
+      capture_size = options.delete(:capture_size) || "full"
 
       if options.keys.length > 0
         if options[:fallback_url]
