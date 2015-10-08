@@ -104,11 +104,15 @@ module Litmus
     #
     # @param email_guid [String]
     # @param client [String]
+    # @param options [Hash]
+    # @option options [String] :images +allowed+ (default) or +blocked+
+    # @option options [String] :orientation +horizontal+ or +vertical+ (default)
     #
     # @return [Hash] a hash mapping the available capture sizes to their
     #   corresponding URLs
-    def self.get_preview(email_guid, client)
-      get "/emails/#{email_guid}/previews/#{client}"
+    def self.get_preview(email_guid, client, options = {})
+      query = URI.encode_www_form(options)
+      get "/emails/#{email_guid}/previews/#{client}?#{query}"
     end
 
     # Pre-request a set of previews before download
@@ -137,6 +141,13 @@ module Litmus
     end
 
     # Construct a preview image URL ready for download
+    #
+    # The generated URLs can be embedded directly within a client application,
+    # for instance with the +src+ tag of an HTML +img+ tag.
+    #
+    # This is also useful for downloading a capture in a single step, rather
+    # than calling +.get_preview+ then making a follow up request to retrieve
+    # the image data.
     #
     # @param [String] email_guid
     # @param [String] client

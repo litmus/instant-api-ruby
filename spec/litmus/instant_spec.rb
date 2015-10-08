@@ -137,6 +137,18 @@ describe Litmus::Instant do
       expect(response.keys).to include *%w(full_url thumb_url thumb450_url)
     end
 
+    it "supports optional capture configuration" do
+      response = Litmus::Instant.get_preview(
+        email_guid,
+        "OL2010",
+        images: "blocked",
+        orientation: "vertical"
+      )
+      expect(response.request.path.to_s).to include(
+        "images=blocked",
+        "orientation=vertical"
+      )
+    end
   end
 
   describe ".prefetch_previews" do
