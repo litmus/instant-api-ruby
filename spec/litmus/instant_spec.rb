@@ -231,4 +231,18 @@ describe Litmus::Instant do
       end
     end
   end
+
+  describe ".get_preview_image" do
+    it "responds with the raw image data" do
+      result = Litmus::Instant.get_preview_image(email_guid, "PLAINTEXT", capture_size: "thumb")
+      expect(result.response["content-type"]).to eq "image/png"
+    end
+
+    it "raises rather than swallowing capture errors by default" do
+      expect {
+        # force a fake error
+        response = Litmus::Instant.get_preview_image(email_guid, "PLAINTEXT", capture_size: "thumb", fail: true)
+      }.to raise_error Litmus::Instant::ApiError
+    end
+  end
 end

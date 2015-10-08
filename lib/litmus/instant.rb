@@ -142,6 +142,8 @@ module Litmus
 
     # Construct a preview image URL ready for download
     #
+    # This does not make a call against the API.
+    #
     # The generated URLs can be embedded directly within a client application,
     # for instance with the +src+ tag of an HTML +img+ tag.
     #
@@ -179,6 +181,42 @@ module Litmus
       else
         "#{sharded_base_uri(client)}/emails/#{email_guid}/previews/#{client}/#{capture_size}"
       end
+    end
+
+    # Convenience for downloading raw image data in Ruby.
+    #
+    # In most situations it will be preferable to avoid this and instead
+    # pass a URL for your client application to download.
+    # @see Litmus::Instant.preview_image_url
+    #
+    # Under the hood this uses HTTParty/Net::HTTP, it's useful for small volumes
+    # and one off image downloads, but not a good choice for downloading large
+    # batches of captures, particularly with the blocking that will occur.
+    # For full size captures an approach that streams and avoids loading the
+    # whole image in to memory may be preferable.
+    #
+    # See the README for alternative approaches and recommendations.
+    #
+    # @param [String] email_guid
+    # @param [String] client
+    # @param [Hash] options
+    # @option options [String] :capture_size +full+ (default), +thumb+ or +thumb450+
+    # @option options [String] :images +allowed+ (default) or +blocked+
+    # @option options [String] :orientation +horizontal+ or +vertical+ (default)
+    # @option options [Boolean] :fallback by default errors during capture
+    #   will raise, setting this to +true+ will mean that failures will be
+    #   swallowed and the returned image data reflect the fallback image
+    # @option options [String] :fallback_url a custom fallback image to display
+    #   in case of errors. This must be an absolute URL and have a recognizable
+    #   image extension. Query parameters are not supported. The image should be
+    #   accessible publicly without the need for authentication.
+    #
+    # @return [HTTParty::Response] the parsed_response property of the returned
+    #   object is the raw image data
+    def self.get_preview_image(email_guid, client, options = {})
+      options = { fallback: false }.merge(options)
+      response = HTTParty.get(preview_image_url(email_guid, client, options))
+      raise_on_failure(response)
     end
 
     private

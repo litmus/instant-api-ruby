@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 16:27:26 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "31c64044-026c-4715-8c59-36d5464588a6"
+        }
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:28:02 GMT
+- request:
+    method: get
+    uri: https://plaintext.instant-api.litmus.com/v1/emails/31c64044-026c-4715-8c59-36d5464588a6/previews/PLAINTEXT/thumb?fail=true&fallback=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 16:27:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '492'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJzdGF0dXMiOiA1MDAsCiAgInRpdGxlIjogIlNlcnZlciBlcnJvciIs
+        CiAgImRlc2NyaXB0aW9uIjogIkFuIHVua25vd24gZXJyb3Igb2NjdXJyZWQu
+        IFdlIGtub3cgdGhpcyBpcyBmcnVzdHJhdGluZywgYnV0IHdlIHJhbiBpbnRv
+        IGEgcHJvYmxlbSBhbmQgd2UgZG9u4oCZdCB5ZXQgaGF2ZSBhIHdheSB0byBj
+        YXRlZ29yaXplIGFuZCByZXBvcnQgaXQgdG8geW91IGFzIHRoaXMgdHlwZSBv
+        ZiBlcnJvciBoYXNu4oCZdCBvY2N1cnJlZCBiZWZvcmUuIFRoaXMgdHlwZSBv
+        ZiBlcnJvciBpcyBsb2dnZWQgb24gb3VyIGVuZCwgYnV0IGlmIHlvdSBzZWUg
+        dGhpcyB3aGlsZSBpbiBkZXZlbG9wbWVudCwgcGxlYXNlIGRvIHJlYWNoIG91
+        dCB0byB1cyBhdCBoZWxsb0BsaXRtdXMuY29tIHdpdGggZGV0YWlscyBvZiB5
+        b3VyIHJlcXVlc3QgYW5kIHdl4oCZbGwgaGF2ZSBhIFN1cHBvcnQgRW5naW5l
+        ZXIgZ2V0IGJhY2sgdG8geW91IGFzIHNvb24gYXMgcG9zc2libGUuIgp9
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 16:28:02 GMT
+recorded_with: VCR 2.9.3
