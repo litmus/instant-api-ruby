@@ -200,6 +200,19 @@ describe Litmus::Instant do
         expect(query_hash["images"]).to eq "blocked"
       end
 
+      it "in place of capture_size param adjusts smartly" do
+        result = Litmus::Instant::preview_image_url(
+          "FAKE-EMAIL-GUID",
+          "FAKE-CLIENT",
+          # no capture_size param
+          orientation: "vertical",
+          images: "blocked"
+        )
+        query_hash = Rack::Utils.parse_nested_query(URI(result).query)
+        expect(query_hash["orientation"]).to eq "vertical"
+        expect(query_hash["images"]).to eq "blocked"
+      end
+
       it "URL encodes the fallback url" do
         result = Litmus::Instant::preview_image_url(
           "FAKE-EMAIL-GUID",

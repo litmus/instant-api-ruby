@@ -138,9 +138,6 @@ module Litmus
 
     # Construct a preview image URL ready for download
     #
-    # We'd use Ruby 2.x keyword args here, but it's more useful to preserve
-    # compatibility for anyone stuck with ruby < 2.x
-    #
     # @param [String] email_guid
     # @param [String] client
     # @param [String] capture_size
@@ -157,6 +154,13 @@ module Litmus
     #
     # @return [String] the preview URL, domain sharded by the client name
     def self.preview_image_url(email_guid, client, capture_size = "full", options = {})
+      # We'd use Ruby 2.x keyword args here, but it's more useful to preserve
+      # compatibility for anyone stuck with ruby < 2.x
+      if capture_size.is_a?(Hash)
+        options = capture_size
+        capture_size = "full"
+      end
+
       if options.keys.length > 0
         if options[:fallback_url]
           options[:fallback_url] = CGI.escape(options[:fallback_url])
