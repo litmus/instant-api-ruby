@@ -39,7 +39,7 @@ describe Litmus::Instant do
           subject(:response) { Litmus::Instant.create_email(valid_email) }
 
           it { is_expected.to be_a Hash }
-          it { is_expected.to have_key "email_guid" }
+          it { is_expected.to have_key :email_guid }
         end
 
         describe "optional end_user_id" do
@@ -49,8 +49,8 @@ describe Litmus::Instant do
                 end_user_id: "bob"
               )
             )
-            expect(response).to have_key "end_user_id"
-            expect(response["end_user_id"]).to eq "bob"
+            expect(response).to have_key :end_user_id
+            expect(response[:end_user_id]).to eq "bob"
           end
         end
 
@@ -64,10 +64,10 @@ describe Litmus::Instant do
                 ]
               )
             )
-            expect(response).to have_key "configurations"
-            expect(response["configurations"]).to be_an Array
-            expect(response["configurations"]).to include(
-              { "client" => "OL2010", "images" => "allowed", "orientation" => "vertical" }
+            expect(response).to have_key :configurations
+            expect(response[:configurations]).to be_an Array
+            expect(response[:configurations]).to include(
+              { client: "OL2010", images: "allowed", orientation: "vertical" }
             )
           end
         end
@@ -87,7 +87,7 @@ describe Litmus::Instant do
     with_authentication do
       Litmus::Instant.create_email(
         plain_text: "Hej världen! Kärlek, den svenska kocken."
-      )["email_guid"]
+      )[:email_guid]
     end
   end
   let(:expired_email_guid) { "e87c1ce1-fc66-4f7e-9eb5-00bffdd04a0f" }
@@ -104,11 +104,11 @@ describe Litmus::Instant do
     it "returns a Hash of clients and their available options" do
       response = Litmus::Instant.client_configurations
       expect(response).to be_a Hash
-      expect(response).to have_key "OL2010"
-      sample_config = response["OL2010"]
+      expect(response).to have_key :OL2010
+      sample_config = response[:OL2010]
       expect(sample_config).to be_a Hash
-      expect(sample_config).to have_key "orientation_options"
-      expect(sample_config).to have_key "images_options"
+      expect(sample_config).to have_key :orientation_options
+      expect(sample_config).to have_key :images_options
     end
   end
 
@@ -134,7 +134,7 @@ describe Litmus::Instant do
     it "returns a Hash of the image types" do
       response = Litmus::Instant.get_preview(email_guid, "PLAINTEXT")
       expect(response).to be_a Hash
-      expect(response.keys).to include *%w(full_url thumb_url thumb450_url)
+      expect(response.keys).to include *%i(full_url thumb_url thumb450_url)
     end
 
     it "supports optional capture configuration" do
@@ -183,11 +183,11 @@ describe Litmus::Instant do
           { client: "IPAD", orientation: "vertical" }
         ]
       )
-      expect(response).to have_key "configurations"
-      expect(response["configurations"]).to be_an Array
+      expect(response).to have_key :configurations
+      expect(response[:configurations]).to be_an Array
       # The API relays the full configs, including any defaults inferred
-      expect(response["configurations"]).to include(
-        { "client" => "OL2010", "images" => "allowed", "orientation" => "vertical" }
+      expect(response[:configurations]).to include(
+        { client: "OL2010", images: "allowed", orientation: "vertical" }
       )
     end
   end
