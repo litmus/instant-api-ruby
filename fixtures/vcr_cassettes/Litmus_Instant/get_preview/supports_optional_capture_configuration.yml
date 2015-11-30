@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 15:56:11 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "93b5954d-c7b5-437d-96d9-9ad6c1717f84"
+        }
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 15:56:15 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/93b5954d-c7b5-437d-96d9-9ad6c1717f84/previews/IPAD?images=blocked&orientation=vertical
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 15:55:40 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '170'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 400,
+          "title": "Bad Request",
+          "description": "Invalid client configuration - 'blocked' images option not valid for 'IPAD', see /clients/configurations"
+        }
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 15:56:15 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/emails/93b5954d-c7b5-437d-96d9-9ad6c1717f84/previews/OL2010?images=blocked&orientation=vertical
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 08 Oct 2015 15:56:28 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '403'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "full_url": "https://OL2010.capture.litmuscdn.com/93b5954d-c7b5-437d-96d9-9ad6c1717f84/results/ol2010-vertical-blocked.png",
+          "thumb_url": "https://OL2010.capture.litmuscdn.com/93b5954d-c7b5-437d-96d9-9ad6c1717f84/results/ol2010-vertical-blocked-thumb.png",
+          "thumb450_url": "https://OL2010.capture.litmuscdn.com/93b5954d-c7b5-437d-96d9-9ad6c1717f84/results/ol2010-vertical-blocked-thumb450.png"
+        }
+    http_version: 
+  recorded_at: Thu, 08 Oct 2015 15:56:32 GMT
+recorded_with: VCR 2.9.3
