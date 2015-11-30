@@ -12,6 +12,15 @@ module Litmus
     headers "Content-Type" => "application/json"
     headers "Accept"       => "application/json"
 
+    class Error < StandardError; end
+    class ApiError < Error; end
+    class RequestError < ApiError; end
+    class AuthenticationError < ApiError; end
+    class ServiceError < ApiError; end
+    class TimeoutError < ApiError; end
+    class NotFound < ApiError; end
+    class NetworkError < Error; end
+
     class << self
       # HTTParty doesn't favour exceptions, we do, so we wrap its methods to
       # give us what we want
@@ -19,19 +28,19 @@ module Litmus
         alias_method :"#{method}_without_raise", method
 
         define_method method do |*args|
-          response = send(:"#{method}_without_raise", *args)
+          begin
+            response = send(:"#{method}_without_raise", *args)
+          rescue SocketError, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET,
+                   EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
+                   Net::ProtocolError => e
+            raise NetworkError, e.message
+          rescue HTTParty::Error
+            raise Error, e.message
+          end
           raise_on_failure(response)
         end
       end
     end
-
-    class ApiError < StandardError; end
-    class RequestError < ApiError; end
-    class AuthenticationError < ApiError; end
-    class ServiceError < ApiError; end
-    class TimeoutError < ApiError; end
-    class NotFound < ApiError; end
-
 
     # Get or set your Instant API key
     # @return [String]

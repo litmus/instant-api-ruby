@@ -108,9 +108,11 @@ rescue Litmus::Instant::ServiceError => e
   # eg a capacity issue or unexpected infrastracture issue
   # This should occur extremely rarely
 rescue Litmus::Instant::ApiError => e
-  # API base error class, catch all the above and any other failure responses
-rescue => e
-  # Un unexpected error occurred, perhaps unrelated to the gem/API
+  # Catch all the above and any other API failure responses
+rescue Litmus::Instant::NetworkError => e
+  # Convenience wrapper around general ruby networking errors
+rescue Litmus::Instant::Error => e
+  # Base error class, parent of everything above
 end
 ```
 
