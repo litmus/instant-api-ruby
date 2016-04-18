@@ -85,10 +85,16 @@ module Litmus
     #   possible. This can be a useful performance optimisation.
     #   See +.prefetch_previews+ for further detail on format.
     #
+    # @param [String] token
+    #   optional OAuth authentication token when calling on behalf of a Litmus
+    #   user. This will be different for each OAuth connected user.
+    #
     # @return [Hash] the response containing the +email_guid+ and also
     #   confirmation of +end_user_id+ and +configurations+ if provided
-    def self.create_email(email)
-      post("/emails", body: email.to_json)
+    def self.create_email(email, token: nil)
+      headers = {}
+      headers["Authorization"] = "Bearer #{token}" if token
+      post("/emails", body: email.to_json, headers: headers)
     end
 
     # List supported email clients
