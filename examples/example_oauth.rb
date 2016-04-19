@@ -117,7 +117,6 @@ __END__
 @@home
 <% if signed_in? %>
   <p>Your are signed in with OAuth</p>
-  <a href="/ping">Ping Litmus Personal API</a>
   <a href="/example">Open Instant example</a>
 <% else %>
   You are signed out, please <a href="/sign_in">sign in with OAuth</a>
