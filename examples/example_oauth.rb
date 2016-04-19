@@ -5,12 +5,67 @@ abort("Error starting server - OAUTH2_CLIENT_ID required") unless ENV["OAUTH2_CL
 abort("Error starting server - OAUTH2_CLIENT_SECRET required") unless ENV["OAUTH2_CLIENT_SECRET"]
 
 Litmus::Instant.base_uri "http://0.0.0.0:3000/v1"
+Litmus::Instant.debug_output $stdout
 
 enable :sessions
 
 helpers do
+  def client(token_method = :post)
+    OAuth2::Client.new(
+      ENV['OAUTH2_CLIENT_ID'],
+      ENV['OAUTH2_CLIENT_SECRET'],
+      site: "http://litmus.dev",
+      token_method: token_method
+    )
+  end
+
+  def user_authorize!
+    session[:return_to] = request.url unless request.url =~ /sign_in/
+    redirect client.auth_code.authorize_url(redirect_uri: redirect_uri) # optionally specify scope: "full"
+  end
+
   def signed_in?
     !session[:access_token].nil?
+  end
+
+  def refresh_available?
+    !session[:refresh_token].nil?
+  end
+
+  def refresh_token!
+    # makes a server to server request for a token
+    new_token = OAuth2::AccessToken.new(
+      client, session[:access_token], refresh_token: session[:refresh_token]
+    ).refresh!
+    store_token(new_token)
+  end
+
+  def store_token(token)
+    session[:access_token]  = token.token
+    session[:refresh_token] = token.refresh_token
+    session[:expires_at]    = token.expires_at
+  end
+
+  def redirect_uri
+    request.base_url + "/callback" # eg http://0.0.0.0:4567/callback
+  end
+
+  def token_expired?
+    session[:expires_at] && (Time.at(session[:expires_at]) < Time.now)
+  end
+
+  # Ensure we have a valid OAuth token before making API calls
+  def oauthorize!
+    # Arguably we should be hitting an endpoint to check the token hasn't been
+    # invalidated since we received it, rather than relying on what we knew when
+    # we received it.
+    return if signed_in? && !token_expired?
+
+    if refresh_available?
+      refresh_token!
+    else
+      user_authorize!
+    end
   end
 end
 
@@ -18,19 +73,8 @@ get '/' do
   erb :home
 end
 
-get '/ping' do
-  res = HTTParty.get("http://api.litmus.dev/v2",
-    headers: { "Authorization" => "Bearer #{session[:access_token]}" }
-  )
-  if res.success?
-    res.body
-  else
-    res.inspect
-  end
-end
-
 get '/example' do
-  redirect '/sign-in' unless session[:access_token]
+  oauthorize!
 
   message = params[:message] || 'Aloha world!'
 
@@ -46,46 +90,25 @@ get '/example' do
   erb :example, locals: { previews: previews }
 end
 
-####### OAuth handling
-
-def client(token_method = :post)
-  OAuth2::Client.new(
-    ENV['OAUTH2_CLIENT_ID'],
-    ENV['OAUTH2_CLIENT_SECRET'],
-    site: "http://litmus.dev",
-    token_method: token_method
-  )
-end
-
-def access_token
-  # makes a server to server request for a token
-  OAuth2::AccessToken.new(client, session[:access_token], refresh_token: session[:refresh_token])
-end
-
-def redirect_uri
-  ENV['OAUTH2_CLIENT_REDIRECT_URI']
-end
+# for Oauth:
 
 get '/sign_in' do
-  redirect client.auth_code.authorize_url(redirect_uri: redirect_uri) # optional scope: "full"
+  user_authorize! unless signed_in?
 end
 
 get '/sign_out' do
-  session[:access_token] = nil
+  session.clear
   redirect '/'
 end
 
 get '/callback' do
   new_token = client.auth_code.get_token(params[:code], redirect_uri: redirect_uri)
-  session[:access_token]  = new_token.token
-  session[:refresh_token] = new_token.refresh_token
-  redirect '/'
+  store_token(new_token)
+  redirect(session[:return_to] || "/")
 end
 
 get '/refresh' do
-  new_token = access_token.refresh!
-  session[:access_token]  = new_token.token
-  session[:refresh_token] = new_token.refresh_token
+  refresh_token!
   redirect '/'
 end
 
