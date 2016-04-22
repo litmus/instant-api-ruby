@@ -1,3 +1,9 @@
+#
+# Things this demo doesn't currently demonstrate:
+# - rate limiting, client restrictions
+# - automatically re-authenticating on Instant errors prompting re-auth
+#
+
 require "bundler"
 Bundler.require
 
@@ -20,11 +26,11 @@ helpers do
   end
 
   def user_authorize!
-    session[:return_to] = request.url unless request.url =~ /sign_in/
+    session[:return_to] = request.url unless request.url =~ /connect/
     redirect client.auth_code.authorize_url(redirect_uri: redirect_uri) # optionally specify scope: "full"
   end
 
-  def signed_in?
+  def connected?
     !session[:access_token].nil?
   end
 
@@ -41,6 +47,8 @@ helpers do
   end
 
   def store_token(token)
+    # Note: you'd usually persist this information, we only keep it on the
+    # session to keep this demo simple
     session[:access_token]  = token.token
     session[:refresh_token] = token.refresh_token
     session[:expires_at]    = token.expires_at
@@ -59,11 +67,15 @@ helpers do
     # Arguably we should be hitting an endpoint to check the token hasn't been
     # invalidated since we received it, rather than relying on what we knew when
     # we received it.
-    return if signed_in? && !token_expired?
+    return if connected? && !token_expired?
 
     if refresh_available?
       refresh_token!
     else
+      # If the user's already authorized the app and they're logged in to
+      # litmus, this
+      # will be invisible to the user (just some redirects while we receive a
+      # new token)
       user_authorize!
     end
   end
@@ -92,11 +104,13 @@ end
 
 # for Oauth:
 
-get '/sign_in' do
-  user_authorize! unless signed_in?
+get '/connect' do
+  user_authorize! unless connected?
 end
 
 get '/sign_out' do
+  # This clears our local session, but the OAuth Provider will still remember
+  # that the user granted access to this application next time they connect
   session.clear
   redirect '/'
 end
@@ -115,14 +129,18 @@ end
 __END__
 
 @@home
-<% if signed_in? %>
-  <p>Your are signed in with OAuth</p>
+<h1>Example Partner App</h1>
+<% if connected? %>
+  <p>Your are connected with Litmus OAuth</p>
   <a href="/example">Open Instant example</a>
+  <a href="/sign_out">Disconnect</a>
 <% else %>
-  You are signed out, please <a href="/sign_in">sign in with OAuth</a>
+  You are signed out, please <a href="/connect">Connect with Litmus</a> or
+  <a href="https://litmus.com#cobranded-landing">Learn more</a>
 <% end %>
 
 @@example
+<h1>Example Partner App</h1>
 <p>
   Add your custom message as a parameter,
   <a href="?message=I like marmots">eg like this</a>.
