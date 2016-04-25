@@ -126,6 +126,11 @@ get '/refresh' do
   redirect '/'
 end
 
+error Litmus::Instant::InvalidOAuthToken do
+  # perhaps access has been revoked since we received the last token
+  user_authorize!
+end
+
 __END__
 
 @@home

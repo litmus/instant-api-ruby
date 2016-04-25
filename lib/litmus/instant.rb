@@ -16,6 +16,11 @@ module Litmus
     class ApiError < Error; end
     class RequestError < ApiError; end
     class AuthenticationError < ApiError; end
+    class AuthorizationError < ApiError; end
+    class InvalidOAuthToken < AuthenticationError; end
+    class InvalidOAuthScope < AuthorizationError; end
+    class InactiveUserError < AuthorizationError; end
+
     class ServiceError < ApiError; end
     class TimeoutError < ApiError; end
     class NotFound < ApiError; end
@@ -195,7 +200,13 @@ module Litmus
       end
     end
 
-    private
+    #
+    # Private ==================================================================
+    #
+
+    # This deliberately allows for multiple authentication challenges within
+    # WWW-Authenticate
+    BEARER_REGEX = /Bearer realm=\"([^\"]*)\"\, error=\"(?<name>[^\"]*)\"\, error_description=\"(?<description>[^\"]*)\"/
 
     # This avoids browser per domain connection limits
     def self.sharded_base_uri(client)
@@ -205,6 +216,9 @@ module Litmus
     def self.raise_on_failure(response)
       unless response.success?
         message = response["description"] || ""
+
+        bearer_error = extract_bearer_error(response.headers)
+        raise bearer_error if bearer_error
 
         raise AuthenticationError.new(message) if response.code == 401
         raise RequestError.new(message) if response.code == 400
@@ -218,5 +232,26 @@ module Litmus
 
       response
     end
+
+    def self.extract_bearer_error(headers)
+      matches = headers["WWW-Authenticate"] &&
+                headers["WWW-Authenticate"].match(BEARER_REGEX)
+
+      return unless matches
+
+      name = matches[:name]
+      message = matches[:description]
+
+      klass = case name
+              when "invalid_token" then InvalidOAuthToken
+              when "invalid_scope" then InvalidOAuthScope
+              when "inactive_user" then InactiveUserError
+              end
+
+      klass && klass.new(message)
+    end
+
+    private_constant :BEARER_REGEX
+    private_class_method :sharded_base_uri, :raise_on_failure, :extract_bearer_error
   end
 end
