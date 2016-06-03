@@ -210,7 +210,12 @@ module Litmus
 
     # This avoids browser per domain connection limits
     def self.sharded_base_uri(client)
-      base_uri.gsub("://","://#{client}.")
+      # only shard where it's supported
+      if base_uri =~ /\/\/instant-api/
+        base_uri.gsub("://","://#{client}.")
+      else
+        base_uri
+      end
     end
 
     def self.raise_on_failure(response)

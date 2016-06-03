@@ -1,9 +1,8 @@
 PATH
   remote: ../../instant-api-ruby
   specs:
-    litmus-instant (0.1.0)
+    litmus-instant (0.2.0)
       httparty (~> 0.13.5)
-      oauth2 (~> 1.1.0)
 
 GEM
   remote: https://rubygems.org/

@@ -1,7 +1,8 @@
 #
 # Things this demo doesn't currently demonstrate:
-# - rate limiting, client restrictions
-# - automatically re-authenticating on Instant errors prompting re-auth
+# - rate limiting
+# - client restrictions
+# - handling the flow where a user declines authorization or signup for litmus
 #
 
 require "bundler"
@@ -10,7 +11,10 @@ Bundler.require
 abort("Error starting server - OAUTH2_CLIENT_ID required") unless ENV["OAUTH2_CLIENT_ID"]
 abort("Error starting server - OAUTH2_CLIENT_SECRET required") unless ENV["OAUTH2_CLIENT_SECRET"]
 
-Litmus::Instant.base_uri "http://0.0.0.0:3000/v1"
+OAUTH_PROVIDER = ENV["OAUTH_PROVIDER"] || "https://litmus.com"
+
+Litmus::Instant.default_options.update(verify: false) if ENV["INSTANT_SKIP_SSL_VERIFICATION"]
+Litmus::Instant.base_uri ENV["INSTANT_BASE_URI"] if ENV["INSTANT_BASE_URI"]
 Litmus::Instant.debug_output $stdout
 
 enable :sessions
@@ -20,7 +24,7 @@ helpers do
     OAuth2::Client.new(
       ENV['OAUTH2_CLIENT_ID'],
       ENV['OAUTH2_CLIENT_SECRET'],
-      site: "http://litmus.dev",
+      site: OAUTH_PROVIDER,
       token_method: token_method
     )
   end
@@ -86,20 +90,25 @@ get '/' do
 end
 
 get '/example' do
-  oauthorize!
+  begin
+    oauthorize!
 
-  message = params[:message] || 'Aloha world!'
+    message = params[:message] || 'Aloha world!'
 
-  result = Litmus::Instant.create_email(
-    { 'plain_text' => message },
-    token: session[:access_token]
-  )
-  email_guid = JSON.parse(result.body)['email_guid']
-  clients = %w(OL2000 GMAILNEW IPHONE6 THUNDERBIRDLATEST)
-  previews = clients.map do |client|
-    [client, Litmus::Instant.preview_image_url(email_guid, client, capture_size: 'thumb450')]
+    result = Litmus::Instant.create_email(
+      { 'plain_text' => message },
+      token: session[:access_token]
+    )
+    email_guid = JSON.parse(result.body)['email_guid']
+    clients = %w(OL2000 GMAILNEW IPHONE6 THUNDERBIRDLATEST)
+    previews = clients.map do |client|
+      [client, Litmus::Instant.preview_image_url(email_guid, client, capture_size: 'thumb450')]
+    end
+    erb :example, locals: { previews: previews }
+  rescue Litmus::Instant::InvalidOAuthToken
+    # perhaps access has been revoked since we received the last token
+    user_authorize!
   end
-  erb :example, locals: { previews: previews }
 end
 
 # for Oauth:
@@ -126,11 +135,6 @@ get '/refresh' do
   redirect '/'
 end
 
-error Litmus::Instant::InvalidOAuthToken do
-  # perhaps access has been revoked since we received the last token
-  user_authorize!
-end
-
 __END__
 
 @@home
@@ -138,7 +142,9 @@ __END__
 <% if connected? %>
   <p>Your are connected with Litmus OAuth</p>
   <a href="/example">Open Instant example</a>
-  <a href="/sign_out">Disconnect</a>
+  <br><br>
+  <a href="/sign_out">Sign out</a> of the Example App
+  (ends session, but the app will remain authorized against the user's litmus account)
 <% else %>
   You are signed out, please <a href="/connect">Connect with Litmus</a> or
   <a href="https://litmus.com#cobranded-landing">Learn more</a>
