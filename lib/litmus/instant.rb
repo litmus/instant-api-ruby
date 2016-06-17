@@ -226,10 +226,11 @@ module Litmus
         raise bearer_error if bearer_error
 
         raise AuthenticationError.new(message) if response.code == 401
-        raise RequestError.new(message) if response.code == 400
-        raise NotFound.new(message) if response.code == 404
-        raise TimeoutError.new(message) if response.code == 504
-        raise ServiceError.new(message) if response.code == 500
+        raise AuthorizationError.new(message)  if response.code == 403
+        raise RequestError.new(message)        if response.code == 400
+        raise NotFound.new(message)            if response.code == 404
+        raise TimeoutError.new(message)        if response.code == 504
+        raise ServiceError.new(message)        if response.code == 500
 
         # For all other errors
         raise ApiError.new(message)
