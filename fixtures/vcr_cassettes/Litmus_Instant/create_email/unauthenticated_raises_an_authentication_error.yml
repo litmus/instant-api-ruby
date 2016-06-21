@@ -19,23 +19,23 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 06 Oct 2015 10:40:32 GMT
+      - Mon, 20 Jun 2016 11:43:45 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '563'
+      - '328'
       Connection:
       - keep-alive
       Www-Authenticate:
-      - Basic realm="Restricted Area"
+      - Basic realm="Litmus Instant API"
     body:
       encoding: UTF-8
       string: |-
         {
           "status": 401,
           "title": "Unauthorized",
-          "description": "API Authentication credentials were missing or incorrect. Make sure the API key you're making the request with matches the key found in your Litmus account. You can find your key, or generate a new one, here: https://litmus.com/api-key. If your API requests were previously working, check to make sure someone hasn't generated a new API key, thereby invalidating the older one. If you're stuck, please reach out at hello@litmus.com and we'll have a Support Engineer reach out as soon as possible."
+          "description": "API Authentication credentials were missing or incorrect. Make sure the credentials you're making the request with match those you were provided. If you're stuck, please email resellers@litmus.com and we'll have a Support Engineer reach out as soon as possible."
         }
     http_version: 
-  recorded_at: Tue, 06 Oct 2015 10:40:36 GMT
+  recorded_at: Mon, 20 Jun 2016 11:43:47 GMT
 recorded_with: VCR 2.9.3

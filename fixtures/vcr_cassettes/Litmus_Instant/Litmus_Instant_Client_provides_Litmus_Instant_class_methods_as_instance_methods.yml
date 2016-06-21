@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/clients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Jun 2016 18:34:56 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '845'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        [
+          "ANDROID4",
+          "ANDROIDGMAILAPP",
+          "AOLONLINE",
+          "APPMAIL8",
+          "APPMAIL9",
+          "CHROMEAOLONLINE",
+          "CHROMEGMAILNEW",
+          "CHROMEGMXDE",
+          "CHROMEGOOGLEAPPS",
+          "CHROMEGOOGLEINBOX",
+          "CHROMEOFFICE365",
+          "CHROMEOUTLOOKCOM",
+          "CHROMEWEBDE",
+          "CHROMEYAHOO",
+          "COLORBLIND",
+          "FFAOLONLINE",
+          "FFGMAILNEW",
+          "FFGMXDE",
+          "FFGOOGLEAPPS",
+          "FFGOOGLEINBOX",
+          "FFOFFICE365",
+          "FFOUTLOOKCOM",
+          "FFWEBDE",
+          "FFYAHOO",
+          "GMAILNEW",
+          "GMXDE",
+          "GOOGLEAPPS",
+          "IPAD",
+          "IPADMINI",
+          "IPHONE5S",
+          "IPHONE5SIOS8",
+          "IPHONE6",
+          "IPHONE6PLUS",
+          "IPHONE6S",
+          "IPHONE6SPLUS",
+          "NOTES7",
+          "NOTES8",
+          "NOTES85",
+          "NOTES9",
+          "OFFICE365",
+          "OL2000",
+          "OL2002",
+          "OL2003",
+          "OL2007",
+          "OL2010",
+          "OL2011",
+          "OL2013",
+          "OL2013DPI120",
+          "OL2015",
+          "OL2016",
+          "OUTLOOKCOM",
+          "PLAINTEXT",
+          "THUNDERBIRDLATEST",
+          "WEBDE",
+          "YAHOO"
+        ]
+    http_version: 
+  recorded_at: Mon, 20 Jun 2016 18:34:58 GMT
+- request:
+    method: get
+    uri: https://instant-api.litmus.com/v1/clients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Jun 2016 18:34:57 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '845'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        [
+          "ANDROID4",
+          "ANDROIDGMAILAPP",
+          "AOLONLINE",
+          "APPMAIL8",
+          "APPMAIL9",
+          "CHROMEAOLONLINE",
+          "CHROMEGMAILNEW",
+          "CHROMEGMXDE",
+          "CHROMEGOOGLEAPPS",
+          "CHROMEGOOGLEINBOX",
+          "CHROMEOFFICE365",
+          "CHROMEOUTLOOKCOM",
+          "CHROMEWEBDE",
+          "CHROMEYAHOO",
+          "COLORBLIND",
+          "FFAOLONLINE",
+          "FFGMAILNEW",
+          "FFGMXDE",
+          "FFGOOGLEAPPS",
+          "FFGOOGLEINBOX",
+          "FFOFFICE365",
+          "FFOUTLOOKCOM",
+          "FFWEBDE",
+          "FFYAHOO",
+          "GMAILNEW",
+          "GMXDE",
+          "GOOGLEAPPS",
+          "IPAD",
+          "IPADMINI",
+          "IPHONE5S",
+          "IPHONE5SIOS8",
+          "IPHONE6",
+          "IPHONE6PLUS",
+          "IPHONE6S",
+          "IPHONE6SPLUS",
+          "NOTES7",
+          "NOTES8",
+          "NOTES85",
+          "NOTES9",
+          "OFFICE365",
+          "OL2000",
+          "OL2002",
+          "OL2003",
+          "OL2007",
+          "OL2010",
+          "OL2011",
+          "OL2013",
+          "OL2013DPI120",
+          "OL2015",
+          "OL2016",
+          "OUTLOOKCOM",
+          "PLAINTEXT",
+          "THUNDERBIRDLATEST",
+          "WEBDE",
+          "YAHOO"
+        ]
+    http_version: 
+  recorded_at: Mon, 20 Jun 2016 18:34:59 GMT
+recorded_with: VCR 2.9.3
