@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    uri: https://instant-api.litmus.com/v1/emails
     body:
       encoding: UTF-8
       string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
@@ -11,6 +11,8 @@ http_interactions:
       - application/json
       Accept:
       - application/json
+      Authorization:
+      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
   response:
     status:
       code: 200
@@ -19,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 06 Oct 2015 10:40:37 GMT
+      - Mon, 20 Jun 2016 11:43:52 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -36,13 +38,13 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "6c8862e2-b10d-4753-85d8-340c91c0b071"
+          "email_guid": "92d9cb6d-6ea0-4b46-813c-3025214f80fd"
         }
     http_version: 
-  recorded_at: Tue, 06 Oct 2015 10:40:41 GMT
+  recorded_at: Mon, 20 Jun 2016 11:43:54 GMT
 - request:
     method: get
-    uri: https://instant-api.litmus.com/v1/emails/6c8862e2-b10d-4753-85d8-340c91c0b071/previews/PLAINTEXT
+    uri: https://instant-api.litmus.com/v1/emails/92d9cb6d-6ea0-4b46-813c-3025214f80fd/previews/PLAINTEXT
     body:
       encoding: US-ASCII
       string: ''
@@ -59,11 +61,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 06 Oct 2015 10:40:09 GMT
+      - Mon, 20 Jun 2016 11:43:56 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '421'
+      - '436'
       Connection:
       - keep-alive
       Strict-Transport-Security:
@@ -76,10 +78,10 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "full_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed.png",
-          "thumb_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed-thumb.png",
-          "thumb450_url": "https://PLAINTEXT.capture.litmuscdn.com/6c8862e2-b10d-4753-85d8-340c91c0b071/results/plaintext-vertical-allowed-thumb450.png"
+          "full_url": "https://plaintext.capture.litmuscdn.com/92d9cb6d-6ea0-4b46-813c-3025214f80fd/results/plaintext-vertical-allowed-1366.png",
+          "thumb_url": "https://plaintext.capture.litmuscdn.com/92d9cb6d-6ea0-4b46-813c-3025214f80fd/results/plaintext-vertical-allowed-1366-thumb.png",
+          "thumb450_url": "https://plaintext.capture.litmuscdn.com/92d9cb6d-6ea0-4b46-813c-3025214f80fd/results/plaintext-vertical-allowed-1366-thumb450.png"
         }
     http_version: 
-  recorded_at: Tue, 06 Oct 2015 10:40:43 GMT
+  recorded_at: Mon, 20 Jun 2016 11:43:58 GMT
 recorded_with: VCR 2.9.3

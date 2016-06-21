@@ -49,6 +49,19 @@ This could be used in a Rails erb template like so
 <%= image_tag @preview_url %>
 ```
 
+### OAuth and API client instantiation
+
+Individual API client objects can be instantiated and expose an identical
+interface to the class methods on `Litmus::Instant`, this the recommended
+approach for acting on behalf of multiple Litmus users within the same
+application, as each client can be configured with an OAuth token for each
+authorized user in a thread safe manner:
+
+```ruby
+api_client = Litmus::Instant::Client.new(oauth_token: "XXX")
+api_client.create_email(plain_text: "Goodbye world.")
+```
+
 ### Performance
 
 In the example above the capture wouldn't be initiated until the end user's browser made the HTTP GET request to the preview URL. This would mean waiting the full capture time (a number of seconds) before the image data began to transfer.
@@ -86,6 +99,8 @@ Litmus::Instant.prefetch_previews(
 ```
 
 For further information see the [performance section](https://litmus.com/partners/api/documentation/instant/04-performance/) of the Instant API documentation.
+
+
 
 ### Handling errors
 

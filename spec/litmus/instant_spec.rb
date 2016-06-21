@@ -4,6 +4,8 @@ require "cgi"
 require "rack/utils"
 
 describe Litmus::Instant do
+  let(:valid_key) { ENV["API_KEY"] }
+
   it "has a version number" do
     expect(Litmus::Instant::VERSION).not_to be nil
   end
@@ -229,6 +231,52 @@ describe Litmus::Instant do
         query_hash = Rack::Utils.parse_nested_query(URI(result).query)
         expect(query_hash["fallback_url"]).to eq "http%3A%2F%2Fplacehold.it%2F100x100.png"
       end
+    end
+  end
+
+  describe Litmus::Instant::Client do
+    it "can be instantiated" do
+      expect { Litmus::Instant::Client.new }.not_to raise_error
+    end
+
+    it "allows setting oauth token independently" do
+      Litmus::Instant.oauth_token = "bar"
+      client = Litmus::Instant::Client.new(oauth_token: "foo")
+      client2 = Litmus::Instant::Client.new(oauth_token: "baz")
+
+      expect(Litmus::Instant.oauth_token).to eq "bar"
+      expect(client.oauth_token).to eq "foo"
+      expect(client2.oauth_token).to eq "baz"
+
+      # Don't leave the token set
+      Litmus::Instant.oauth_token = nil
+    end
+
+    it "allows setting api key independently" do
+      Litmus::Instant.api_key = "bar"
+      client = Litmus::Instant::Client.new(api_key: "foo")
+
+      expect(Litmus::Instant.api_key).to eq "bar"
+      expect(client.api_key).to eq "foo"
+
+      # Don't leave the global key set
+      Litmus::Instant.api_key = nil
+    end
+
+    it "provides Litmus::Instant class methods as instance methods" do
+      client = Litmus::Instant::Client.new
+      expect(client.clients.to_a).to eq Litmus::Instant.clients.to_a
+    end
+
+    it "uses its own config" do
+      Litmus::Instant.api_key = "invalid_key"
+      client = Litmus::Instant::Client.new(api_key: valid_key)
+
+      expect { Litmus::Instant.create_email(plain_text: "boo") }.to raise_error
+      expect { client.create_email(plain_text: "boo") }.to_not raise_error
+
+      # Don't leave the global key set
+      Litmus::Instant.api_key = nil
     end
   end
 end

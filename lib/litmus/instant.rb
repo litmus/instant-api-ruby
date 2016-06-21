@@ -4,7 +4,7 @@ require "uri"
 require "cgi"
 
 module Litmus
-  module Instant
+  class Instant
     include HTTParty
 
     base_uri "https://instant-api.litmus.com/v1"
@@ -47,16 +47,64 @@ module Litmus
       end
     end
 
+    # This allows us to create API Client instances, useful primarily with
+    # OAuth, to set a token for each authorized user in a thread safe manner
+    # All the class methods on `Instant` are made available on the instance
+    class Client
+      class << self
+        def new(oauth_token: nil, api_key: nil)
+          Class.new(Instant) do |klass|
+            extend Forwardable
+
+            def_delegators(
+              :"self.class",
+              *(Litmus::Instant.methods - Object.methods)
+            )
+
+            klass.oauth_token = oauth_token if oauth_token
+            klass.api_key = api_key if api_key
+          end.new
+        end
+      end
+    end
+
     # Get or set your Instant API key
     # @return [String]
-    def self.api_key(key=nil)
-      if key
-        @key = key
-        self.basic_auth key, ""
-      end
+    def self.api_key(key = nil)
+      self.api_key = key if key
       @key
     end
-    singleton_class.send(:alias_method, :api_key=, :api_key)
+
+    # Set your Instant API key
+    def self.api_key=(key)
+      self.default_options.delete :basic_auth
+      basic_auth key, "" if key
+      @key = key
+    end
+
+    # Get or set a global OAuth token to use
+    # This is *not* thread safe, if you intend to authorize multiple end users
+    # within the same application use
+    #
+    #     Litmus::Instant::Client.new(oauth_token: "XXX")
+    #
+    # @return [String]
+    def self.oauth_token(token = nil)
+      self.api_token = token if token
+      @token
+    end
+
+    # Set an OAuth token to be used globally
+    # This is *not* thread safe, if you intend to authorize multiple end users
+    # within the same application use
+    #
+    #     Litmus::Instant::Client.new(oauth_token: "XXX")
+    #
+    def self.oauth_token=(token)
+      self.default_options[:headers].delete "Authorization"
+      self.headers("Authorization" => "Bearer #{token}") if token
+      @token = token
+    end
 
     # Describe an email’s content and metadata and, in exchange, receive an
     # +email_guid+ required to capture previews of it
@@ -96,10 +144,8 @@ module Litmus
     #
     # @return [Hash] the response containing the +email_guid+ and also
     #   confirmation of +end_user_id+ and +configurations+ if provided
-    def self.create_email(email, token: nil)
-      headers = {}
-      headers["Authorization"] = "Bearer #{token}" if token
-      post("/emails", body: email.to_json, headers: headers)
+    def self.create_email(email)
+      post("/emails", body: email.to_json)
     end
 
     # List supported email clients
