@@ -1,5 +1,7 @@
 # Examples of InstantAPI usage
 
+See also https://github.com/litmus/litmus-oauth-example
+
 ## Prerequisites
 
 - ruby
