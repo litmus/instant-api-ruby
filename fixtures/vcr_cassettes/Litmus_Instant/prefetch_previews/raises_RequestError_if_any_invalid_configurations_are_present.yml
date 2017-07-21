@@ -78,4 +78,84 @@ http_interactions:
         }
     http_version: 
   recorded_at: Mon, 20 Jun 2016 11:44:06 GMT
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Jul 2017 12:59:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "63c98daa-7572-48ea-b97d-9a817be8dfac"
+        }
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 13:02:06 GMT
+- request:
+    method: post
+    uri: https://instant-api.litmus.com/v1/emails/63c98daa-7572-48ea-b97d-9a817be8dfac/previews/prefetch
+    body:
+      encoding: UTF-8
+      string: '{"configurations":[{"client":"OL2010"},{"client":"OL2001MYSPACEODYSSEY"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Jul 2017 12:59:34 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 400,
+          "title": "Bad Request",
+          "description": "Each client must be valid, 'OL2001MYSPACEODYSSEY' is unknown"
+        }
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 13:02:06 GMT
 recorded_with: VCR 2.9.3

@@ -38,4 +38,42 @@ http_interactions:
         }
     http_version: 
   recorded_at: Mon, 20 Jun 2016 11:43:50 GMT
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"nyan_text":"Miow världen!"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Jul 2017 12:59:16 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '122'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": 400,
+          "title": "Bad Request",
+          "description": "One of 'html_text','plain_text','raw_source' is required"
+        }
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 13:01:49 GMT
 recorded_with: VCR 2.9.3
