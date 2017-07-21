@@ -40,7 +40,8 @@ describe Litmus::Instant do
         describe "response" do
           subject(:response) { Litmus::Instant.create_email(valid_email) }
 
-          it { is_expected.to be_a Hash }
+          it { is_expected.to respond_to(:keys) }
+          it { is_expected.to respond_to(:fetch) }
           it { is_expected.to have_key "email_guid" }
         end
 
@@ -97,7 +98,8 @@ describe Litmus::Instant do
   describe ".clients" do
     it "returns an array of client names" do
       response = Litmus::Instant.clients
-      expect(response).to be_an Array
+      expect(response).to respond_to(:[])
+      expect(response).to respond_to(:length)
       expect(response).to include "OL2010"
     end
   end
@@ -105,7 +107,8 @@ describe Litmus::Instant do
   describe ".client_configurations" do
     it "returns a Hash of clients and their available options" do
       response = Litmus::Instant.client_configurations
-      expect(response).to be_a Hash
+      expect(response).to respond_to(:keys)
+      expect(response).to respond_to(:fetch)
       expect(response).to have_key "OL2010"
       sample_config = response["OL2010"]
       expect(sample_config).to be_a Hash
@@ -135,7 +138,8 @@ describe Litmus::Instant do
 
     it "returns a Hash of the image types" do
       response = Litmus::Instant.get_preview(email_guid, "PLAINTEXT")
-      expect(response).to be_a Hash
+      expect(response).to respond_to(:keys)
+      expect(response).to respond_to(:fetch)
       expect(response.keys).to include *%w(full_url thumb_url thumb450_url)
     end
 
