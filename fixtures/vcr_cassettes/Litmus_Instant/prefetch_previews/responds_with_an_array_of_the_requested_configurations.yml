@@ -87,4 +87,93 @@ http_interactions:
         }
     http_version: 
   recorded_at: Mon, 20 Jun 2016 11:44:08 GMT
+- request:
+    method: post
+    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
+    body:
+      encoding: UTF-8
+      string: '{"plain_text":"Hej världen! Kärlek, den svenska kocken."}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Jul 2017 12:59:34 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=3600; includeSubdomains; preload
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email_guid": "63c98daa-7572-48ea-b97d-9a817be8dfac"
+        }
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 13:02:07 GMT
+- request:
+    method: post
+    uri: https://instant-api.litmus.com/v1/emails/63c98daa-7572-48ea-b97d-9a817be8dfac/previews/prefetch
+    body:
+      encoding: UTF-8
+      string: '{"configurations":[{"client":"OL2010","images":"allowed"},{"client":"IPAD","orientation":"vertical"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Jul 2017 12:59:35 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '222'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "configurations": [
+            {
+              "orientation": "vertical",
+              "images": "allowed",
+              "client": "OL2010"
+            },
+            {
+              "orientation": "vertical",
+              "images": "allowed",
+              "client": "IPAD"
+            }
+          ]
+        }
+    http_version: 
+  recorded_at: Fri, 21 Jul 2017 13:02:08 GMT
 recorded_with: VCR 2.9.3
