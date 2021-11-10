@@ -13,7 +13,7 @@ get '/example' do
   result = Litmus::Instant.create_email('plain_text' => message)
 
   email_guid = JSON.parse(result.body)['email_guid']
-  clients = %w(OL2000 GMAILNEW IPHONE6 THUNDERBIRDLATEST)
+  clients = %w(OL2019 GMAILNEW IPHONE13 THUNDERBIRDLATEST)
   previews = clients.map do |client|
     [client, Litmus::Instant.preview_image_url(email_guid, client, capture_size: 'thumb450')]
   end
