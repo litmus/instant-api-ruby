@@ -13,6 +13,12 @@ VCR.configure do |config|
   config.hook_into :webmock
 
   config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
+  config.filter_sensitive_data('<ENCODED_API_KEY>') { |interaction|
+    authz = interaction.request.headers['Authorization']&.first
+    if match = authz&.match(/^Basic\s+([\w=]+)/)
+      match.captures.first
+    end
+  }
 
   #config.debug_logger = $stderr
 end
