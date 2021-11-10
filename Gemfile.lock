@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    litmus-instant (0.3.0)
+    litmus-instant (0.3.1)
       httparty (>= 0.13.5, < 1.0.0)
 
 GEM
