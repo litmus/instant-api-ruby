@@ -1,4 +1,4 @@
-name: Specs
+name: CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  specs:
 
     runs-on: ubuntu-latest
 
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby ${{ matrix.ruby-version }}
-        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
       - name: Install dependencies
