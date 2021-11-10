@@ -11,6 +11,10 @@ http_interactions:
       - application/json
       Accept:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
@@ -19,13 +23,13 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 20 Jun 2016 11:43:49 GMT
+      - Wed, 10 Nov 2021 11:31:05 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '7236'
-      Connection:
-      - keep-alive
+      - '26075'
+      Vary:
+      - Origin
       Strict-Transport-Security:
       - max-age=3600; includeSubdomains; preload
       X-Frame-Options:
@@ -36,31 +40,6 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "OL2000": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "OL2002": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "OL2003": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed",
-              "blocked"
-            ]
-          },
           "OL2007": {
             "orientation_options": [
               "vertical"
@@ -68,7 +47,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook 2007",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "OL2010": {
             "orientation_options": [
@@ -77,7 +60,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook 2010",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "OL2013": {
             "orientation_options": [
@@ -86,7 +73,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook 2013",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "CHROMEYAHOO": {
             "orientation_options": [
@@ -95,7 +86,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Yahoo! Mail",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "FFYAHOO": {
             "orientation_options": [
@@ -104,7 +99,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Yahoo! Mail",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "YAHOO": {
             "orientation_options": [
@@ -113,7 +112,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Yahoo! Mail",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "GMAILNEW": {
             "orientation_options": [
@@ -122,7 +125,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Gmail",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFGMAILNEW": {
             "orientation_options": [
@@ -131,7 +138,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Gmail",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEGMAILNEW": {
             "orientation_options": [
@@ -140,7 +151,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Gmail",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "OL2015": {
             "orientation_options": [
@@ -149,24 +164,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
-          },
-          "APPMAIL8": {
-            "orientation_options": [
-              "vertical"
             ],
-            "images_options": [
-              "allowed",
-              "blocked"
-            ]
-          },
-          "OL2011": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
+            "name": "Outlook 2016",
+            "group": "Desktop",
+            "platform": "macOS 10.12.6",
+            "status": "normal"
           },
           "OUTLOOKCOM": {
             "orientation_options": [
@@ -175,7 +177,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook.com",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFOUTLOOKCOM": {
             "orientation_options": [
@@ -184,7 +190,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook.com",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEOUTLOOKCOM": {
             "orientation_options": [
@@ -193,7 +203,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook.com",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "IPAD": {
             "orientation_options": [
@@ -201,47 +215,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
-          },
-          "IPADMINI": {
-            "orientation_options": [
-              "vertical"
             ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE5S": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE5SIOS8": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE6": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE6PLUS": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
+            "name": "iPad (Retina)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
           },
           "THUNDERBIRDLATEST": {
             "orientation_options": [
@@ -250,7 +228,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Thunderbird 60",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "PLAINTEXT": {
             "orientation_options": [
@@ -258,7 +240,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "Plain Text",
+            "group": "Desktop",
+            "platform": "Text-only view",
+            "status": "normal"
           },
           "AOLONLINE": {
             "orientation_options": [
@@ -267,7 +253,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "AOL Mail",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFAOLONLINE": {
             "orientation_options": [
@@ -276,7 +266,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "AOL Mail",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEAOLONLINE": {
             "orientation_options": [
@@ -285,7 +279,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "AOL Mail",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "GOOGLEAPPS": {
             "orientation_options": [
@@ -294,7 +292,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "G Suite",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFGOOGLEAPPS": {
             "orientation_options": [
@@ -303,7 +305,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "G Suite",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEGOOGLEAPPS": {
             "orientation_options": [
@@ -312,7 +318,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "G Suite",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "COLORBLIND": {
             "orientation_options": [
@@ -320,23 +330,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
-          },
-          "NOTES7": {
-            "orientation_options": [
-              "vertical"
             ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "NOTES8": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
+            "name": "Color Blindness",
+            "group": "Desktop",
+            "platform": "Simulated",
+            "status": "normal"
           },
           "NOTES85": {
             "orientation_options": [
@@ -344,7 +342,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "Lotus Notes 8.5",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "NOTES9": {
             "orientation_options": [
@@ -352,7 +354,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "IBM Notes 9",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "OFFICE365": {
             "orientation_options": [
@@ -361,7 +367,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Office 365",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFOFFICE365": {
             "orientation_options": [
@@ -370,7 +380,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Office 365",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEOFFICE365": {
             "orientation_options": [
@@ -379,7 +393,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Office 365",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "OL2013DPI120": {
             "orientation_options": [
@@ -387,7 +405,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "Outlook 2013 120 DPI",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "OL2016": {
             "orientation_options": [
@@ -396,7 +418,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Outlook 2016",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
           },
           "ANDROIDGMAILAPP": {
             "orientation_options": [
@@ -404,31 +430,11 @@ http_interactions:
             ],
             "images_options": [
               "allowed"
-            ]
-          },
-          "ANDROID4": {
-            "orientation_options": [
-              "vertical"
             ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE6S": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
-          },
-          "IPHONE6SPLUS": {
-            "orientation_options": [
-              "vertical"
-            ],
-            "images_options": [
-              "allowed"
-            ]
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "Android 6.0",
+            "status": "normal"
           },
           "GMXDE": {
             "orientation_options": [
@@ -437,7 +443,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "GMX.de",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFGMXDE": {
             "orientation_options": [
@@ -446,7 +456,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "GMX.de",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEGMXDE": {
             "orientation_options": [
@@ -455,7 +469,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "GMX.de",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
           "WEBDE": {
             "orientation_options": [
@@ -464,7 +482,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Web.de",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
           "FFWEBDE": {
             "orientation_options": [
@@ -473,7 +495,11 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Web.de",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
           },
           "CHROMEWEBDE": {
             "orientation_options": [
@@ -482,34 +508,899 @@ http_interactions:
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Web.de",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
           },
-          "APPMAIL9": {
+          "IPADPRO13IN": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad Pro (12.9 inch)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "COMCAST": {
             "orientation_options": [
               "vertical"
             ],
             "images_options": [
               "allowed",
               "blocked"
-            ]
+            ],
+            "name": "Comcast",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
           },
-          "FFGOOGLEINBOX": {
+          "FFCOMCAST": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Comcast",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
+          },
+          "CHROMECOMCAST": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Comcast",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
+          },
+          "IPHONESE": {
             "orientation_options": [
               "vertical"
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "iPhone SE",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
           },
-          "CHROMEGOOGLEINBOX": {
+          "WINDOWS10MAIL": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Windows 10 Mail",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "MAILRU": {
             "orientation_options": [
               "vertical"
             ],
             "images_options": [
               "allowed"
-            ]
+            ],
+            "name": "Mail.ru",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
+          },
+          "CHROMEMAILRU": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Mail.ru",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
+          },
+          "FFMAILRU": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Mail.ru",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
+          },
+          "OUTLOOKIOS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Outlook iOS",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "ANDROID6": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Android 6.0",
+            "group": "Mobile/Tablet",
+            "platform": "Android 6.0",
+            "status": "normal"
+          },
+          "ANDROIDGMAILIMAP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App IMAP",
+            "group": "Mobile/Tablet",
+            "platform": "Android 6.0",
+            "status": "normal"
+          },
+          "FREENETDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "freenet.de",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
+          },
+          "FFFREENETDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "freenet.de",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
+          },
+          "CHROMEFREENETDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "freenet.de",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
+          },
+          "TONLINEDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "T-Online.de",
+            "group": "Web-based",
+            "platform": "Edge",
+            "status": "normal"
+          },
+          "FFTONLINEDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "T-Online.de",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
+          },
+          "CHROMETONLINEDE": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "T-Online.de",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
+          },
+          "GMAILIOS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "ANDROIDSAMSUNG6": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Samsung Mail",
+            "group": "Mobile/Tablet",
+            "platform": "Android 6.0",
+            "status": "normal"
+          },
+          "IPHONE8": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 8",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 12.0",
+            "status": "normal"
+          },
+          "IPHONE8PLUS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 8 Plus",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 12.0",
+            "status": "normal"
+          },
+          "ANDROIDOUTLOOK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Outlook",
+            "group": "Mobile/Tablet",
+            "platform": "Android 7.0",
+            "status": "normal"
+          },
+          "IPADPRO10P5IN": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad Pro (10.5 inch)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "ANDROID71GMAILAPP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "Android 7.1",
+            "status": "normal"
+          },
+          "ANDROID8GMAILAPP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "Android 8.0",
+            "status": "normal"
+          },
+          "OL2019": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Outlook 2019",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "ANDROIDSAMSUNG7": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Samsung Mail",
+            "group": "Mobile/Tablet",
+            "platform": "Android 7.0",
+            "status": "normal"
+          },
+          "IPHONEXS": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone XS",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 12.0",
+            "status": "normal"
+          },
+          "IPHONEXSMAX": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone XS Max",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 12.0",
+            "status": "normal"
+          },
+          "IPHONEXR": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone XR",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 12.0",
+            "status": "normal"
+          },
+          "OL2019MAC": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "OL Office 365",
+            "group": "Desktop",
+            "platform": "macOS 10.15",
+            "status": "normal"
+          },
+          "NOTES10": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "IBM Notes 10",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "OL2019DPI120": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Outlook 2019 120 DPI",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "IPHONE11": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "IPHONE11PRO": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11 Pro",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "IPHONE11PROMAX": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11 Pro Max",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "IPHONE11PRODARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11 Pro Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "OL2016DPI120": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Outlook 2016 120 DPI",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "IPADGEN7": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad (Gen 7)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "IPADGEN7DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad (Gen 7) Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "APPMAIL13": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Apple Mail 13",
+            "group": "Desktop",
+            "platform": "macOS 10.15",
+            "status": "normal"
+          },
+          "APPMAIL13DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Apple Mail 13 Dark",
+            "group": "Desktop",
+            "platform": "macOS 10.15",
+            "status": "normal"
+          },
+          "IPADPRO11IN": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad Pro (11 inch)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.1",
+            "status": "normal"
+          },
+          "OL365": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "OL Office 365",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "OL365DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "OL Office 365 Dark",
+            "group": "Desktop",
+            "platform": "Windows 10",
+            "status": "normal"
+          },
+          "FFOUTLOOKCOMDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Outlook.com Dark",
+            "group": "Web-based",
+            "platform": "Firefox",
+            "status": "normal"
+          },
+          "CHROMEOUTLOOKCOMDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Outlook.com Dark",
+            "group": "Web-based",
+            "platform": "Chrome",
+            "status": "normal"
+          },
+          "ANDROID9GMAILAPP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "Android 9.0",
+            "status": "normal"
+          },
+          "IPHONESE2020": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone SE (Gen 2)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 13.4",
+            "status": "normal"
+          },
+          "ANDROID10GMAILAPP": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App",
+            "group": "Mobile/Tablet",
+            "platform": "Android 10.0",
+            "status": "normal"
+          },
+          "ANDROID10GMAILAPPDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App Dark",
+            "group": "Mobile/Tablet",
+            "platform": "Android 10.0",
+            "status": "normal"
+          },
+          "GMAILIOSDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Gmail App Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE11IOS14": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE11IOS14DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 11 Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12 Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12MINI": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12 mini",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12MINIDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12 mini Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12PROMAX": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12 Pro Max",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPHONE12PROMAXDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 12 Pro Max Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "IPADAIRGEN4": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad Air (Gen 4)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 14.2",
+            "status": "normal"
+          },
+          "APPMAIL14": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Apple Mail 14",
+            "group": "Desktop",
+            "platform": "macOS 11.0",
+            "status": "normal"
+          },
+          "APPMAIL14DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "Apple Mail 14 Dark",
+            "group": "Desktop",
+            "platform": "macOS 11.0",
+            "status": "normal"
+          },
+          "OL2019MACDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed",
+              "blocked"
+            ],
+            "name": "OL Office 365 Dark",
+            "group": "Desktop",
+            "platform": "macOS 10.15",
+            "status": "normal"
+          },
+          "IPHONE13": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 13",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "IPHONE13DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 13 Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "IPHONE13PROMAX": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 13 Pro Max",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "IPHONE13PROMAXDARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPhone 13 Pro Max Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "IPADMINI6": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad mini (Gen 6)",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "IPADMINI6DARK": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "iPad mini (Gen 6) Dark",
+            "group": "Mobile/Tablet",
+            "platform": "iOS 15.0",
+            "status": "normal"
+          },
+          "APPMAIL15": {
+            "orientation_options": [
+              "vertical"
+            ],
+            "images_options": [
+              "allowed"
+            ],
+            "name": "Apple Mail 15",
+            "group": "Desktop",
+            "platform": "macOS 12.0",
+            "status": "normal"
+          },
+          "APPMAIL15DARK": {
+            "orientation_options": null,
+            "images_options": null,
+            "name": "Apple Mail 15 Dark",
+            "group": "Desktop",
+            "platform": "macOS 12.0",
+            "status": "normal"
           }
         }
-    http_version: 
-  recorded_at: Mon, 20 Jun 2016 11:43:51 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 10 Nov 2021 11:31:01 GMT
+recorded_with: VCR 6.0.0

@@ -11,6 +11,10 @@ http_interactions:
       - application/json
       Accept:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
       Authorization:
       - Basic aW52YWxpZF9rZXk6
   response:
@@ -21,15 +25,15 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 20 Jun 2016 18:34:57 GMT
+      - Wed, 10 Nov 2021 11:31:37 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '328'
-      Connection:
-      - keep-alive
       Www-Authenticate:
       - Basic realm="Litmus Instant API"
+      Vary:
+      - Origin
     body:
       encoding: UTF-8
       string: |-
@@ -38,8 +42,7 @@ http_interactions:
           "title": "Unauthorized",
           "description": "API Authentication credentials were missing or incorrect. Make sure the credentials you're making the request with match those you were provided. If you're stuck, please email resellers@litmus.com and we'll have a Support Engineer reach out as soon as possible."
         }
-    http_version: 
-  recorded_at: Mon, 20 Jun 2016 18:34:59 GMT
+  recorded_at: Wed, 10 Nov 2021 11:31:33 GMT
 - request:
     method: post
     uri: https://instant-api.litmus.com/v1/emails
@@ -51,6 +54,10 @@ http_interactions:
       - application/json
       Accept:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
       Authorization:
       - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
   response:
@@ -61,93 +68,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 20 Jun 2016 18:34:57 GMT
+      - Wed, 10 Nov 2021 11:31:40 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '58'
-      Connection:
-      - keep-alive
-      Strict-Transport-Security:
-      - max-age=3600; includeSubdomains; preload
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "email_guid": "98f7d82b-982d-44f2-8818-45a2284cb974"
-        }
-    http_version: 
-  recorded_at: Mon, 20 Jun 2016 18:35:00 GMT
-- request:
-    method: post
-    uri: https://invalid_key:@instant-api.litmus.com/v1/emails
-    body:
-      encoding: UTF-8
-      string: '{"plain_text":"boo"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Fri, 21 Jul 2017 12:59:35 GMT
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '328'
-      Connection:
-      - keep-alive
-      Www-Authenticate:
-      - Basic realm="Litmus Instant API"
-      Vary:
-      - Origin
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "status": 401,
-          "title": "Unauthorized",
-          "description": "API Authentication credentials were missing or incorrect. Make sure the credentials you're making the request with match those you were provided. If you're stuck, please email resellers@litmus.com and we'll have a Support Engineer reach out as soon as possible."
-        }
-    http_version: 
-  recorded_at: Fri, 21 Jul 2017 13:02:08 GMT
-- request:
-    method: post
-    uri: https://<API_KEY>:@instant-api.litmus.com/v1/emails
-    body:
-      encoding: UTF-8
-      string: '{"plain_text":"boo"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Fri, 21 Jul 2017 12:59:36 GMT
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '58'
-      Connection:
-      - keep-alive
       Vary:
       - Origin
       Strict-Transport-Security:
@@ -160,8 +85,7 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "1c084b8d-2869-4f37-8c55-9c7aec539d80"
+          "email_guid": "1e239602-632d-4a5f-9a36-1f44430b86b6"
         }
-    http_version: 
-  recorded_at: Fri, 21 Jul 2017 13:02:09 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 10 Nov 2021 11:31:36 GMT
+recorded_with: VCR 6.0.0
