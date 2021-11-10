@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:30:56 GMT
+      - Wed, 10 Nov 2021 14:36:18 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -40,5 +40,5 @@ http_interactions:
           "title": "Unauthorized",
           "description": "API Authentication credentials were missing or incorrect. Make sure the credentials you're making the request with match those you were provided. If you're stuck, please email resellers@litmus.com and we'll have a Support Engineer reach out as soon as possible."
         }
-  recorded_at: Wed, 10 Nov 2021 11:30:52 GMT
+  recorded_at: Wed, 10 Nov 2021 14:36:18 GMT
 recorded_with: VCR 6.0.0

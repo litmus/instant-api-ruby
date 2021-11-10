@@ -16,7 +16,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 200
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:00 GMT
+      - Wed, 10 Nov 2021 14:36:29 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -42,8 +42,8 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "f49e2b3f-ae4d-466a-b9a9-bdb0c0e7efc3",
+          "email_guid": "73462dba-2038-4b8a-b27c-09356c83066a",
           "end_user_id": "bob"
         }
-  recorded_at: Wed, 10 Nov 2021 11:30:56 GMT
+  recorded_at: Wed, 10 Nov 2021 14:36:29 GMT
 recorded_with: VCR 6.0.0

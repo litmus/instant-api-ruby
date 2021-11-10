@@ -16,7 +16,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 400
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:02 GMT
+      - Wed, 10 Nov 2021 14:36:31 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -40,5 +40,5 @@ http_interactions:
           "title": "Bad Request",
           "description": "One of 'html_text','plain_text','raw_source' is required"
         }
-  recorded_at: Wed, 10 Nov 2021 11:30:58 GMT
+  recorded_at: Wed, 10 Nov 2021 14:36:32 GMT
 recorded_with: VCR 6.0.0

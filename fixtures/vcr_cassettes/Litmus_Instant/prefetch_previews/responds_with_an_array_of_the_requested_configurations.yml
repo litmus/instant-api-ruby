@@ -16,7 +16,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 200
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:33 GMT
+      - Wed, 10 Nov 2021 14:37:01 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -42,12 +42,12 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "0cb4051b-bbd5-4878-bfc9-0f0ce6e783f9"
+          "email_guid": "5b893fa9-a8d3-41be-842c-cfd1967d3e40"
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:29 GMT
+  recorded_at: Wed, 10 Nov 2021 14:37:01 GMT
 - request:
     method: post
-    uri: https://instant-api.litmus.com/v1/emails/0cb4051b-bbd5-4878-bfc9-0f0ce6e783f9/previews/prefetch
+    uri: https://instant-api.litmus.com/v1/emails/5b893fa9-a8d3-41be-842c-cfd1967d3e40/previews/prefetch
     body:
       encoding: UTF-8
       string: '{"configurations":[{"client":"OL2010","images":"allowed"},{"client":"IPAD","orientation":"vertical"}]}'
@@ -68,7 +68,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:35 GMT
+      - Wed, 10 Nov 2021 14:37:02 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -92,5 +92,5 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:31 GMT
+  recorded_at: Wed, 10 Nov 2021 14:37:02 GMT
 recorded_with: VCR 6.0.0

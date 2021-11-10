@@ -16,7 +16,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 200
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:08 GMT
+      - Wed, 10 Nov 2021 14:36:36 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -42,12 +42,12 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "3bb69cde-7b40-4526-bb1f-c02218d72f9d"
+          "email_guid": "5b893fa9-a8d3-41be-842c-cfd1967d3e40"
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:04 GMT
+  recorded_at: Wed, 10 Nov 2021 14:36:36 GMT
 - request:
     method: get
-    uri: https://instant-api.litmus.com/v1/emails/3bb69cde-7b40-4526-bb1f-c02218d72f9d/previews/OL2001MYSPACEODYSSEY
+    uri: https://instant-api.litmus.com/v1/emails/5b893fa9-a8d3-41be-842c-cfd1967d3e40/previews/OL2001MYSPACEODYSSEY
     body:
       encoding: US-ASCII
       string: ''
@@ -68,7 +68,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:09 GMT
+      - Wed, 10 Nov 2021 14:36:36 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -83,5 +83,5 @@ http_interactions:
           "title": "Bad Request",
           "description": "'client' must be valid, see /clients"
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:05 GMT
+  recorded_at: Wed, 10 Nov 2021 14:36:36 GMT
 recorded_with: VCR 6.0.0

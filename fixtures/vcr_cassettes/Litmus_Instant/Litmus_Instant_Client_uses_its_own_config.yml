@@ -16,7 +16,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic aW52YWxpZF9rZXk6
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 401
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:37 GMT
+      - Wed, 10 Nov 2021 14:37:04 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -42,7 +42,7 @@ http_interactions:
           "title": "Unauthorized",
           "description": "API Authentication credentials were missing or incorrect. Make sure the credentials you're making the request with match those you were provided. If you're stuck, please email resellers@litmus.com and we'll have a Support Engineer reach out as soon as possible."
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:33 GMT
+  recorded_at: Wed, 10 Nov 2021 14:37:04 GMT
 - request:
     method: post
     uri: https://instant-api.litmus.com/v1/emails
@@ -59,7 +59,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic Y3hkNHR1c3F3b2tnZ2dseGl6ZDl2cDd6bXV4dmo2eG95a2UxOg==
+      - Basic <ENCODED_API_KEY>
   response:
     status:
       code: 200
@@ -68,7 +68,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Nov 2021 11:31:40 GMT
+      - Wed, 10 Nov 2021 14:37:06 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -85,7 +85,7 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "email_guid": "1e239602-632d-4a5f-9a36-1f44430b86b6"
+          "email_guid": "b1c67565-2fa4-445c-94b7-45fe91e2ef58"
         }
-  recorded_at: Wed, 10 Nov 2021 11:31:36 GMT
+  recorded_at: Wed, 10 Nov 2021 14:37:06 GMT
 recorded_with: VCR 6.0.0
